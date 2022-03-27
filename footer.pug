@@ -1,0 +1,91 @@
+mixin footer({main_list, img, icons, bottom_list})
+  .footer
+    
+    .footer_main
+      each x in main_list
+        .info_block
+          h4
+            a.text-dark-strong-4.primary-bold-sm(href=x.url, title=x.name) #{x.title}
+          ul 
+            each val in x.list
+              li
+                a.text-dark-disabled-1.primary-regular-sm(href=val.url, title=val.name) #{val.name}
+      img(src=img, alt="starbuck")
+    
+    hr
+
+    .footer_icons
+      each icon in icons
+        a(href=icon.url)
+          img(src=icon.path, alt=icon.name)
+      
+    ul.footer_bottom
+      each sub in bottom_list
+        li
+          a.text-dark-strong-4.primary-bold-xxs(href=sub.url) #{sub.name}
+    - const year = new Date().getFullYear()
+    h6.text-dark-disabled-1.primary-regular &copy; #{year} Starbucks Coffee Company. All right reserved.
+
+
+
+//- +footer({
+//-       bottom_list: [
+//-         {
+//-           name: "Web Acessibility",
+//-           url: "https://react.com",
+//-         },
+//-         {
+//-           name: "Privacy Policy",
+//-           url: "https://starbucks.com",
+//-         }
+//-       ],
+//-       icons: [
+//-         {
+//-           name: "facebook",
+//-           path: static_img_path + "Icon awesome-facebook.png",
+//-           url:  "https://facebook.com"
+//-         },
+//-         {
+//-           name: "instagram",
+//-           path: static_img_path + "Icon awesome-instagram.png",
+//-           url:  ""
+//-         }
+//-       ],
+//-       img: static_img_path + "Group 30.png",
+//-       main_list: [
+//-         {
+//-           title: "About Us",
+//-           url: "https://facebook.com",
+//-           list: [
+//-                   {
+//-                     name: "Our Company",
+//-                     url: "https://Google.com"
+//-                   },
+//-                   {
+//-                     name: "Our Heritage",
+//-                     url: "https://youtube.com"
+//-                   }
+//-                 ]
+//-         },
+//-         {
+//-           title: "Carrer",
+//-           url: "https://twitter.com",
+//-           list: [
+//-                   {
+//-                     name: "Become a Partnet",
+//-                     url: "https://bing.com"
+//-                   }
+//-                 ]
+//-         },
+//-         {
+//-           title: "Customer Service",
+//-           url: "https://twitter.com",
+//-           list: [
+//-                   {
+//-                     name: "FAQ",
+//-                     url: "https://bing.com"
+//-                   }
+//-                 ]
+//-         }
+//-                   ]
+//-             })
